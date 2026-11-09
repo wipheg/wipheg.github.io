@@ -1,0 +1,39 @@
+{%- comment -%}
+  Custom head additions for posts that have a translation (same `ref`):
+  1. hreflang links so search engines know the language versions belong together.
+  2. Remember the language a reader picked with the switch button, and open
+     that language automatically on other posts that have it.
+{%- endcomment -%}
+{%- if page.ref -%}
+  {%- assign versions = site.posts | where: 'ref', page.ref -%}
+  {%- if versions.size > 1 -%}
+    {%- assign cur_lang = page.lang | default: site.lang -%}
+    {%- for p in versions -%}
+      {%- assign p_lang = p.lang | default: site.lang %}
+<link rel="alternate" hreflang="{{ p_lang }}" href="{{ p.url | absolute_url }}">
+    {%- endfor %}
+<script>
+  (function () {
+    var KEY = 'preferred-lang';
+    var current = {{ cur_lang | jsonify }};
+    var versions = {
+      {%- for p in versions -%}
+        {%- assign p_lang = p.lang | default: site.lang -%}
+        {{ p_lang | jsonify }}: {{ p.url | relative_url | jsonify }}{% unless forloop.last %}, {% endunless %}
+      {%- endfor -%}
+    };
+    var preferred = null;
+    try { preferred = localStorage.getItem(KEY); } catch (e) {}
+    if (preferred && preferred !== current && versions[preferred]) {
+      location.replace(versions[preferred]);
+      return;
+    }
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest && e.target.closest('.lang-switch a[hreflang]');
+      if (!link) return;
+      try { localStorage.setItem(KEY, link.getAttribute('hreflang')); } catch (err) {}
+    });
+  })();
+</script>
+  {%- endif -%}
+{%- endif -%}

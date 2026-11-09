@@ -1,0 +1,8 @@
+# Language switch shown on posts that have a translation (same `ref`).
+# order: button order. labels: button text.
+order:
+  - ko-KR
+  - en
+labels:
+  ko-KR: 한국어
+  en: English

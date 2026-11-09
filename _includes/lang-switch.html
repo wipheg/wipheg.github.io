@@ -1,0 +1,24 @@
+{%- comment -%}
+  Korean/English switch for posts that share the same `ref` in front matter.
+  Posts without `lang` are treated as site.lang.
+{%- endcomment -%}
+{%- if page.ref -%}
+  {%- assign versions = site.posts | where: 'ref', page.ref -%}
+  {%- if versions.size > 1 -%}
+    <div class="lang-switch mb-3" role="group" aria-label="Language">
+      {%- for code in site.data.lang_switch.order -%}
+        {%- for p in versions -%}
+          {%- assign p_lang = p.lang | default: site.lang -%}
+          {%- if p_lang == code -%}
+            {%- assign label = site.data.lang_switch.labels[code] | default: code -%}
+            {%- if p.url == page.url -%}
+              <span class="btn btn-sm btn-secondary me-1 disabled" aria-current="page">{{ label }}</span>
+            {%- else -%}
+              <a class="btn btn-sm btn-outline-secondary me-1" href="{{ p.url | relative_url }}" hreflang="{{ p_lang }}" lang="{{ p_lang }}">{{ label }}</a>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+{%- endif -%}

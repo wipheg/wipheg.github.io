@@ -1,14 +1,13 @@
-# won.dev · Chirpy 개발 블로그
+# wipheg · Chirpy 개발 블로그
 
 **실제 Jekyll Chirpy 테마**를 사용하는 개인 개발 블로그입니다. 공식 [Chirpy Starter](https://github.com/cotes2020/chirpy-starter)를 바탕으로 설정했습니다.
 
-- 블로그 이름: **won.dev**
+- 블로그 이름: **wipheg**
 - 작성자 / GitHub: **wipheg**
 - 공개 예정 주소: **https://wipheg.github.io**
 - 한국어 메뉴, 서울 시간대, 밝은 / 어두운 모드
 - 카테고리, 태그, 글 보관함, 검색, 글 목차, 코드 강조, RSS
 
-세 개의 글과 소개는 시작을 위한 예시입니다. 글 제목에 `[예시]`라고 표시했습니다. 원하는 내용으로 바꾸거나 삭제하세요.
 
 ## GitHub Pages에 올리기
 
@@ -25,7 +24,7 @@ GitHub Desktop을 사용하면 숨김 폴더 `.github`도 함께 올릴 수 있�
 ```sh
 git init -b main
 git add .
-git commit -m "Set up won.dev with Chirpy"
+git commit -m "Set up blog with Chirpy"
 git remote add origin https://github.com/wipheg/wipheg.github.io.git
 git push -u origin main
 ```
@@ -67,7 +66,7 @@ console.log('Hello, blog!');
 | `_posts/` | 글 원본 |
 | `_data/authors.yml` | 작성자 정보 |
 | `_data/contact.yml` | 왼쪽 아래 GitHub·RSS 링크 |
-| `assets/img/avatar.svg` | 기본 W 프로필 이미지 |
+| `assets/img/avatar.webp` | 프로필 이미지 |
 | `.github/workflows/pages-deploy.yml` | 자동 생성·검사·배포 |
 
 댓글과 방문 통계는 연결하지 않았습니다. 댓글을 사용하려면 본인의 giscus 등 서비스 설정을 `_config.yml`에 입력하세요. 개인 이메일은 임의로 넣지 않았습니다.

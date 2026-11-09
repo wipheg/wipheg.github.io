@@ -14,9 +14,9 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: won.dev # the main title
+title: wipheg # the main title
 
-tagline: 만들고, 배우고, 기록합니다.
+tagline: ""
 
 description: >- # used by seo meta and the atom feed
   개발하면서 배운 것과 해결한 문제를 차곡차곡 기록합니다.
@@ -98,7 +98,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: /assets/img/avatar.svg
+avatar: /assets/img/avatar.webp
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.

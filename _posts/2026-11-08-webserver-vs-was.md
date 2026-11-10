@@ -1,6 +1,6 @@
 ---
 title: "웹 서버와 WAS의 차이, 그리고 Apache vs Nginx"
-date: 2026-11-10 09:03:00 +0900
+date: 2026-11-08 09:03:00 +0900
 categories: [Backend, Infra]
 tags: [web-server, was, apache, nginx, tomcat]
 description: 웹 서버와 WAS가 각각 무슨 일을 하고 왜 나눠 쓰는지, Apache와 Nginx는 구조가 어떻게 다르고 어디에 쓰는지 정리했다.

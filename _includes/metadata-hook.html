@@ -1,4 +1,12 @@
 {%- comment -%}
+  Headings are links to themselves (see _includes/refactor-content.html).
+  Keep them looking like headings; show an underline only on hover.
+{%- endcomment %}
+<style>
+  .content .heading-link { color: inherit; text-decoration: none; border-bottom: none; }
+  .content .heading-link:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+</style>
+{%- comment -%}
   Custom head additions for posts that have a translation (same `ref`):
   1. hreflang links so search engines know the language versions belong together.
   2. Remember the language a reader picked with the switch button, and open
